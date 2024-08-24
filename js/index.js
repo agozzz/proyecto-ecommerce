@@ -1,10 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(){
 
-    if (localStorage.setItem("isLoggedIn") !== "true") {
-        window.location.href = "login.html";
-        return;
-    }
-
     document.getElementById("autos").addEventListener("click", function() {
         localStorage.setItem("catID", 101);
         window.location = "products.html"

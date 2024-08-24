@@ -1,5 +1,5 @@
 body {
-    background-image: url("../img/fondolog.jpg"); /* Ruta a tu imagen de fondo */
+    background-image: url("../img/fondolog.jpg");
     background-size: contain;
     background-size: 1380px 700px;
     background-position: top;
@@ -30,7 +30,7 @@ h1 {
 }
 
 #ecommerce {
-    max-width: 100%; /* Asegura que la imagen no sea más ancha que el contenedor */
+    max-width: 100%;
 }
 
 #bienvenida {
