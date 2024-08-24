@@ -19,10 +19,14 @@ function mostrarProductos(productos) {
         card.innerHTML = `
             <img src="${producto.image}" alt="${producto.name}">
             <div class="card-body">
-                <h5 class="card-title">${producto.name}</h5>
-                <p class="card-text">${producto.description}</p>
-                <p class="card-precio">$${producto.cost}</p>
-                <p class="card-sold">${producto.soldCount} vendidos</p>
+                <div class="card-sup">
+                    <h5 class="card-title">${producto.name}</h5>
+                    <p class="card-precio">$${producto.cost}</p>
+                </div>
+                <div class="card-inf">
+                    <p class="card-text">${producto.description}</p>
+                    <p class="card-sold">${producto.soldCount} vendidos</p>
+                </div>
             </div>
         `;
         contenedor.appendChild(card);
