@@ -9,8 +9,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (!username.value || !password.value) {
             alert("Debes ingresar un usuario y una contraseña para continuar");
         } else {
-            sessionStorage.setItem("username", username);
-            sessionStorage.setItem("password", password);
+            console.log("username", username.value);
+            console.log("password", password.value);
+            localStorage.setItem("username", username.value);
+            localStorage.setItem("password", password.value);
             window.location.href = "index.html"
         }
     };
