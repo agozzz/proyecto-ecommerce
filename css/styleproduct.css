@@ -1,39 +1,31 @@
 body {
     font-family: 'Raleway', sans-serif;
     background-color: #EEAE39;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    margin-top: 20px;
-
   }
   
   #autos-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; 
-    gap: 18px; 
+    gap: 1.5%; 
+    padding: auto;
   }
   
   .card {
-    width: 32%;
     background-color: transparent;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: left;
+    width: 330px;
   }
   
   .card img {
     width: 100%;
-    height: 380px;
     object-fit: cover;
     display: block;
   }
   
   .card-body {
     padding: 0%;
-    display: flex;
+justify-content: space-around;
     flex-direction: column;
     background-color: #D9D9D9;
   }
@@ -51,7 +43,6 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 2px;
   }
 
   .card-title {
@@ -77,13 +68,10 @@ body {
   }
   
   .nav-link img {
-    padding: 0%;
-    width: 287px;
+    width: 80%;
     height: auto;
     display: block;
-    margin: 0 auto;
     border: 1px solid orange;
-    justify-content: space-between;
   }
   
   .navbar {
@@ -105,21 +93,18 @@ body {
   .nav-link2 img{
     width: 80px;
     height: auto;
-    display: block;
+    display: flex;
     margin: 0px;
   }
 
   .nav-link3 img{
     width: 51px;
     height: auto;
-    display: block;
+    display: flex;
   }
 
 .nav-item{
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
   background-color: transparent;
 }
 
@@ -127,5 +112,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
   }
