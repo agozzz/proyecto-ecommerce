@@ -79,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
         const productosOrdenados = [...productos].sort((a, b) => b.soldCount - a.soldCount);
         mostrarProductos(productosOrdenados);
     });
-     
+
     // Función para filtrar los productos en función de la búsqueda (Desafíate - Sofi)
-    function filtrarProductos(busqueda) {
-        const productosFiltrados = productos.filter(producto => {
+   function filtrarProductos(busqueda) {
+    const productosFiltrados = productos.filter(producto => {
         const titulo = producto.name.toLowerCase();
         const descripcion = producto.description.toLowerCase();
         return titulo.includes(busqueda.toLowerCase()) || descripcion.includes(busqueda.toLowerCase());
@@ -90,16 +90,15 @@ document.addEventListener("DOMContentLoaded", function() {
     mostrarProductos(productosFiltrados); // Mostrar solo los productos filtrados
     }
 
-    // Busca el campo de búsqueda y se agrega el evento input para filtrar productos (Desafíate - Sofi)
-     const campoBusqueda = document.getElementById("search");
-     if (campoBusqueda) {
-     campoBusqueda.addEventListener("input", function() {
+// Busca el campo de búsqueda y se agrega el evento input para filtrar productos
+const campoBusqueda = document.getElementById("search");
+if (campoBusqueda) {
+    campoBusqueda.addEventListener("input", function() {
         filtrarProductos(campoBusqueda.value);
-     });
-     } else {
+    });
+} else {
     console.error("El campo de búsqueda no fue encontrado.");
-     }
-   
+};
 
     obtenerProductos(categoriaId); // Obtener los productos según la categoría seleccionada al cargar la página
     
@@ -108,5 +107,8 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
 });
+
+
+   
 
 
