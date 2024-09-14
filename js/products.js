@@ -100,7 +100,6 @@ if (campoBusqueda) {
     console.error("El campo de búsqueda no fue encontrado.");
 };
 
-
     obtenerProductos(categoriaId); // Obtener los productos según la categoría seleccionada al cargar la página
     
     } else {
