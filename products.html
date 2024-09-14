@@ -42,9 +42,43 @@
       </div>
     </div>
   </nav>
+
+  <!-- Filtro por precio - hecho por hernandezerica -->
+  <div class="container mt-3"> 
+    <h5>Filtrar productos</h5>
+    <div class="row">
+      <div class="col-md-4">
+        <label for="minPrice" class="form-label">Precio mínimo</label> <!-- For "" para mejorar accesibilidad y experiencia de usuario -->
+        <input type="number" class="form-control" id="minPrice" placeholder="Ingrese precio mínimo"><!-- Filtro para precio minimo -->
+      </div>
+      <div class="col-md-4">
+        <label for="maxPrice" class="form-label">Precio máximo</label>
+        <input type="number" class="form-control" id="maxPrice" placeholder="Ingrese precio máximo"> <!-- placeholder para mostrar texto que desaparece cuando el usuario comienza a escribir -->
+      </div>
+      <div class="col-md-4 d-flex align-items-end">
+        <button id="botonFiltro" class="btn btn-primary w-100">Filtrar</button>
+      </div>
+    </div>
+
+    <!-- Filtro por orden ascendente/descendente - hecho por hernandezerica -->
+    <h5 class="mt-4">Ordenar productos</h5>
+    <div class="row">
+      <div class="col-md-4">
+        <button id="ordenarAsc" class="btn btn-outline-primary w-100">Ordenar por precio ascendente</button> <!--Estas clases son parte del CSS Bootstrap-->
+      </div>
+      <div class="col-md-4">
+        <button id="ordenarDes" class="btn btn-outline-primary w-100">Ordenar por precio descendente</button>
+      </div>
+      <div class="col-md-4">
+        <button id="ordRelevancia" class="btn btn-outline-primary w-100">Ordenar por relevancia</button>
+      </div>
+    </div>
+  </div>
+
+  
   <main>
     <div class="container mt-4 mb-4">
-        <div id="autos-container"></div>
+        <div id="productos-container"></div>
     </div>
   </main>
   <footer class="text-muted">

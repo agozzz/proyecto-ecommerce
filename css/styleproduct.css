@@ -3,7 +3,7 @@ body {
     background-color: #EEAE39;
   }
   
-  #autos-container {
+  #productos-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start; 
@@ -25,7 +25,7 @@ body {
   
   .card-body {
     padding: 0%;
-justify-content: space-around;
+    justify-content: space-around;
     flex-direction: column;
     background-color: #D9D9D9;
   }
