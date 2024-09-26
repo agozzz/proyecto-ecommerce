@@ -126,17 +126,13 @@
     margin-left: 200px;
   }
   
-  .imagchica {
-    margin-left: 11%;
-  
-  }
-  .imagenes-chicas img{
+  .imagenes-chicas {
+    padding-left: 150px; 
+    display: flex;      
+    gap: 20px;             
+}
+
+.imagenes-chicas img {
     width: 130px;
     cursor: pointer;
-    margin-right: 25px;
-  }
-  
-  .imagenes-chicas {
-    display: flex;
-  }
-  
+}
