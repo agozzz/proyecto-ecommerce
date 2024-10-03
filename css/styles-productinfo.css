@@ -136,3 +136,73 @@ h1, .descripcion, .precio, .boton {
   width: 130px;
   cursor: pointer;
 }
+
+.container {
+display: flex;
+flex-direction: column; 
+align-items: center;
+}
+
+.productos-relacionados-container {
+background-color: #eec77ef8; 
+padding: 20px; 
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 70%;
+}
+
+#productos-relacionados {
+display: flex;
+flex-wrap: wrap; 
+justify-content: center;
+align-items: center;
+}
+
+#productos-relacionados .col {
+flex: 1 0 auto; 
+margin: 30px; 
+}
+
+h2 {
+font-size: 20px;
+font-weight: bolder;
+text-align: center;        
+background-color: #d49a2f;   
+color: #fff;                
+padding: 10px 20px; 
+margin-bottom: 0;   
+width: 70%;                              
+}
+
+/*nuevos estilos comentarios*/
+#ratings-section {
+  margin-top: 20px;
+}
+
+.review {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+.review h3 {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.review .date {
+  color: #888;
+  font-size: 0.9em;
+}
+
+.review .rating {
+  color: #f39c12;
+}
+
+.review p {
+  margin: 5px 0 0;
+}
