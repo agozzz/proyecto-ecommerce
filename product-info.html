@@ -48,33 +48,32 @@
   </nav>
 </div>
 <div class="product">
-<div class="product-imagen">
-<img src="img/prod50921_1.jpg" alt="producto">
+  <div class="product-imagen">
+    <img id="imagen-principal" src="" alt="producto principal">
+  </div>
+  <div class="producto-info">
+    <h1 class="name"></h1>
+    <p class="descripcion"></p>
+    <p class="precio"></p>
+    <button class="boton">Comprar</button>
+    <p class="vendidos"></p>
+  </div>
 </div>
 
-
-<div class="producto-info">
-  
-  <h1> Chevrolet Onix Joy</h1>
-
-  <p class="descripcion"> Generación 2019, variedad de colores. Motor 1.0, ideal para ciudad.</p>
-  <p class="precio">Precio: $13500 </p>
-  <button class="boton">Comprar</button>
-  <p2 class="vendidos">14 vendidos</p2>
-</div>
-</div>
 <div class="imagenes-chicas">
-  <img class="imagchica" src="img/prod50921_2.jpg" alt="Producto">
-  <img src="img/prod50921_3.jpg" alt="Producto">
-  <img src="img/prod50921_4.jpg" alt="Producto">
+  <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
+  <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
+  <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
 </div>
 
-  <main>
-      <div class="container mt-4 mb-4">
-        <div id="prodID"></div>
-    </div>
-    </div>
-  </main>
+
+<main>
+  <div class="container mt-4 mb-4">
+    <div id="prodID"></div>
+    <div id="ratings-section">
+      <h2>Calificaciones</h2>
+      <div id="comments"></div>
+</div>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
