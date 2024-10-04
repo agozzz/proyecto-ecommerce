@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Obtener y mostrar las calificaciones del producto
     obtenerYMostrarCalificaciones(productID);
 });
-
 function obtenerProducto(productID) {
     const URL_info_productos = `https://japceibal.github.io/emercado-api/products/${productID}.json`;
     
@@ -24,6 +23,29 @@ function obtenerProducto(productID) {
     .catch(error => {
         console.error("Error al obtener el producto", error);
     });
+}
+
+function mostrarProducto(producto) {
+    // Mostrar la imagen principal
+    document.getElementById('imagen-principal').src = producto.images[0];
+
+    // Mostrar el resto de las imágenes
+    let imagenesChicas = document.querySelectorAll(".imagenes-chicas img");
+    for (let i = 0; i < imagenesChicas.length; i++) {
+        imagenesChicas[i].src = producto.images[i];
+    }
+
+    // Mostrar otros datos del producto
+    document.querySelector('.name').textContent = producto.name;
+    document.querySelector('.descripcion').textContent = producto.description;
+    document.querySelector('.precio').textContent = `Precio: $${producto.cost}`;
+    document.querySelector('.vendidos').textContent = `${producto.soldCount} vendidos`;    
+}
+
+// Función para seleccionar imagen pequeña y mostrarla como imagen principal
+function seleccionarImagen(imagen) {
+    let imagenPrincipal = document.getElementById('imagen-principal');
+    imagenPrincipal.src = imagen.src;
 }
 
 function mostrarProducto(producto) {
@@ -78,6 +100,7 @@ function mostrarProductosRelacionados(relatedProducts) {
 // Actualizar la página con el nuevo producto seleccionado
 function actualizarProducto(productID) {
     localStorage.setItem("prodID", productID); // Guardar el nuevo ID de producto en localStorage
+
     window.location.href = "product-info.html"; // Redirigir a la misma página para recargar con el nuevo producto
 }
 
@@ -109,3 +132,22 @@ function obtenerYMostrarCalificaciones(productID) {
         console.error("Error al obtener las calificaciones", error);
     });
 }
+=======
+    window.location.reload(); // Recargar la página para mostrar el nuevo producto
+}
+
+
+//Solicitud pintar-despintar estrellas
+ const hearts = document.querySelectorAll(".heart")
+
+ hearts.forEach (function (heart, index){
+    heart.addEventListener('click',function(){
+    for (let i=0; i<=index; i++){
+        hearts[i].classList.add('checked');
+    }
+    for (let i=index+1; i<hearts.length; i++) {
+        hearts[i].classList.remove('checked')
+    }
+    
+})
+ })

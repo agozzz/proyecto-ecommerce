@@ -10,6 +10,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles-productinfo.css" rel="stylesheet">
+  <!--cdn icon bootstrap--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -64,8 +65,34 @@
   <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
   <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
   <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
+=======
 </div>
 
+<!--Calificacion-->
+<div class="rating">
+  <form id="ratingForm">
+
+    <div class="rating-">
+      <div class="rating-back">
+      <div class="rating-group-left">
+        <p class="rating-question"> ¿Te gustaria darnos tu opinión sobre este producto?</p>
+        <input type="text" class="rating-control" id="comment-rating" placeholder="Ingresa un comentario" required>
+        <p class="rating-content"> Calificación:</p>
+      </div>
+    <div class="ratingStar">
+    <i class="bi bi-heart-fill heart"> </i>
+    <i class="bi bi-heart-fill heart"> </i>
+    <i class="bi bi-heart-fill heart"> </i>
+    <i class="bi bi-heart-fill heart"> </i>
+    <i class="bi bi-heart-fill heart"> </i>
+  </div>
+</div>
+    </div>
+    <div class="rating-buttton">
+    <button class="rating-button">Enviar</button>
+  </div>
+  </form>
+</div>
 
   <main>
       <div class="container mt-4 mb-4">
@@ -80,7 +107,7 @@
       <div class="productos-relacionados-container"> 
         <div id="productos-relacionados" class="row row-cols-1 row-cols-md-4 g-4"></div>
       </div>
-  </div>
+    </div>
   </main>
   <footer class="text-muted">
     <div class="container">
@@ -101,6 +128,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/product-info.js"></script>
+
 </body>
 
 </html>
