@@ -292,6 +292,7 @@ width: 70%;
 .imagenes-chicas img {
     width: 130px;
     cursor: pointer;
+<<<<<<< Updated upstream
 }
 
 .container {
@@ -385,3 +386,42 @@ margin-bottom: 10px;
 .ratingStar.checked{
   color: red
 }
+=======
+    margin-right: 25px;
+  }
+  
+  .imagenes-chicas {
+    display: flex;
+  }
+  /*nuevos estilos omentarios*/
+  #ratings-section {
+    margin-top: 20px;
+}
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.review:last-child {
+    border-bottom: none;
+}
+
+.review h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.review .date {
+    color: #888;
+    font-size: 0.9em;
+}
+
+.review .rating {
+    color: #f39c12;
+}
+
+.review p {
+    margin: 5px 0 0;
+}
+>>>>>>> Stashed changes
