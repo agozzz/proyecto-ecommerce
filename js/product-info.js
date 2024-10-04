@@ -77,3 +77,19 @@ function actualizarProducto(productID) {
     localStorage.setItem("prodID", productID); // Guardar el nuevo ID de producto en localStorage
     window.location.reload(); // Recargar la página para mostrar el nuevo producto
 }
+
+
+//Solicitud pintar-despintar estrellas
+ const hearts = document.querySelectorAll(".heart")
+
+ hearts.forEach (function (heart, index){
+    heart.addEventListener('click',function(){
+    for (let i=0; i<=index; i++){
+        hearts[i].classList.add('checked');
+    }
+    for (let i=index+1; i<hearts.length; i++) {
+        hearts[i].classList.remove('checked')
+    }
+    
+})
+ })
