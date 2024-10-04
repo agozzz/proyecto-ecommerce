@@ -174,3 +174,57 @@ h2 {
   margin-bottom: 0;   
   width: 70%;                              
 }
+
+.rating- {
+  display: flex;
+ text-align: center;
+ align-items: center;
+ justify-content: center;
+ padding: 20px;
+}
+
+.rating-back {
+  background-color:#eec77ef8;
+ padding: 0px
+}
+
+.rating-question {
+  font-size: 15px;        
+  background-color: #d49a2f;   
+  color: #fff;                
+  padding: 10px 20px; 
+  margin-bottom: 0;   
+  width: 100%;   
+}
+
+.rating-control {
+  padding: 30px 120px;
+}
+
+.rating-content {
+  font-size: 15px;
+margin-right: 300px;
+margin-bottom: 10px;
+
+}
+
+.rating-buttton {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratingStar {
+  display: flex;
+  padding-left: 300px;
+  margin-top: -30px;
+  color: #eeeeee;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.ratingStar :hover
+.ratingStar.checked{
+  color: red
+}
