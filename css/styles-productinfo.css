@@ -137,7 +137,7 @@ h1, .descripcion, .precio, .boton {
   padding-left: 200px; 
   display: flex;      
   gap: 40px; 
-  margin-left: 200px;          
+  margin-left: 140px;          
 }
 
 .imagenes-chicas img {
