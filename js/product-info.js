@@ -132,9 +132,9 @@ function obtenerYMostrarCalificaciones(productID) {
         console.error("Error al obtener las calificaciones", error);
     });
 }
-=======
-    window.location.reload(); // Recargar la página para mostrar el nuevo producto
-}
+
+    //window.location.reload(); // Recargar la página para mostrar el nuevo producto
+
 
 
 //Solicitud pintar-despintar estrellas
