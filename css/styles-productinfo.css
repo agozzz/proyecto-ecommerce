@@ -190,6 +190,14 @@ width: 70%;
   place-items: center; /* Centra horizontal y verticalmente */
 }
 
+#comments {
+  background-color: #eec77ef8; 
+  padding: 40px; 
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 70%;
+}
+
 
 .review {
   border-bottom: 1px solid #ddd;
