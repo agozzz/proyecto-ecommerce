@@ -48,22 +48,6 @@ function seleccionarImagen(imagen) {
     imagenPrincipal.src = imagen.src;
 }
 
-function mostrarProducto(producto) {
-    // Mostrar la imagen principal
-    document.getElementById('imagen-principal').src = producto.images[0];
-
-    // Mostrar el resto de las imágenes
-    let imagenesChicas = document.querySelectorAll(".imagenes-chicas img");
-    for (let i = 0; i < imagenesChicas.length; i++) {
-        imagenesChicas[i].src = producto.images[i];
-    }
-
-    // Mostrar otros datos del producto
-    document.querySelector('.name').textContent = producto.name;
-    document.querySelector('.descripcion').textContent = producto.description;
-    document.querySelector('.precio').textContent = `Precio: $${producto.cost}`;
-    document.querySelector('.vendidos').textContent = `${producto.soldCount} vendidos`;    
-}
 
 // Función para seleccionar imagen pequeña y mostrarla como imagen principal
 function seleccionarImagen(imagen) {
