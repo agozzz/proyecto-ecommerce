@@ -117,6 +117,48 @@ function obtenerYMostrarCalificaciones(productID) {
     });
 }
 
+//Desafiate: simula envio de formulario y lo muestra en las calificaciones
+const form = document.getElementById("ratingForm");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // Obtener los datos ingresados en el formulario
+    const comentario = document.getElementById("comment-rating").value;
+    const estrellas = document.querySelectorAll(".heart.checked").length; // Obtener la cantidad de corazones seleccionados (calificación)
+    
+    // Simulación de la publicación en la sección de calificaciones
+    publicarCalificacion(comentario, estrellas);
+});
+
+function publicarCalificacion(comentario, estrellas) {
+    const nombreUsuario = localStorage.getItem("username"); // Obtener el nombre del usuario desde localStorage
+
+    const nuevaCalificacion = {
+        user: nombreUsuario, // Nombre del usuario logueado
+        dateTime: new Date().toISOString(), // Fecha y hora actual
+        description: comentario,
+        score: estrellas
+    };
+
+    // Publicar la nueva calificación en la sección de comentarios
+    let calificacionesContainer = document.getElementById('comments');
+    let reviewHTML = `
+        <div class="review">
+            <h5>${nuevaCalificacion.user}</h5>
+            <div class="date">${new Date(nuevaCalificacion.dateTime).toLocaleDateString()}</div>
+            <div class="rating">${'★'.repeat(nuevaCalificacion.score)}${'☆'.repeat(5 - nuevaCalificacion.score)}</div>
+            <p>${nuevaCalificacion.description}</p>
+        </div>
+    `;
+    calificacionesContainer.innerHTML += reviewHTML;
+
+    // Limpiar el formulario después de enviar
+    document.getElementById("ratingForm").reset();
+    const hearts = document.querySelectorAll(".heart.checked");
+    hearts.forEach(heart => heart.classList.remove("checked")); // Desmarcar los corazones
+}
+//fin :)
+
     //window.location.reload(); // Recargar la página para mostrar el nuevo producto
 
 
@@ -135,3 +177,4 @@ function obtenerYMostrarCalificaciones(productID) {
     
 })
  })
+
