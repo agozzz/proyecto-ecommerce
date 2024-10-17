@@ -301,7 +301,7 @@ width: 70%;
   }
   
   .imagenes-chicas {
-    padding-left: 150px; 
+    padding-left: 100px; 
     display: flex;      
     gap: 20px;             
 }
@@ -402,3 +402,142 @@ margin-bottom: 10px;
 .ratingStar.checked{
   color: red
 }
+
+
+.modonoche{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* Estilos para el modo día (por defecto) */
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Estilos para el modo noche */
+body.night-mode {
+  background-color: #2e2e2e;
+  color: #ffffff;
+}
+body.night-mode .navbar { 
+  background-color: #333; 
+  border-bottom: 2px #2e2e2e;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  height: 115px; } 
+
+button {
+  background-color: #333;
+  color: #ffffff;
+}
+body.night-mode #ratings-section {
+  background-color: #2e2e2e;
+}
+
+body.night-mode #comments {
+  background-color: #3b3b3b; 
+  color: #ffffff;  
+}
+
+body.night-mode .review {
+  border-bottom: 1px solid #555; 
+}
+
+body.night-mode .review h3 {
+  color: #ffcc00; 
+}
+
+body.night-mode .review .date {
+  color: #bbbbbb; 
+}
+
+body.night-mode .review .rating {
+  color: #ffcc00; 
+}
+
+body.night-mode .review p {
+  color: #e0e0e0; 
+}
+
+body.night-mode .nav-item1 {
+  background-color: #444444; 
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.5); 
+}
+
+
+body.night-mode .producto-info h1 {
+  background-color: #3b3b3b; 
+  color: #ffcc00; 
+}
+
+body.night-mode .producto-info p {
+  color: #e0e0e0; 
+}
+
+body.night-mode .descripcion {
+  background-color: #444444; 
+  color: #ffffff;
+   }
+
+body.night-mode .precio {
+  background-color: #3b3b3b; 
+  color: #ffcc00; 
+}
+
+body.night-mode .boton {
+  background-color: #333333;  
+  color: #ffcc00;  
+}
+
+body.night-mode .vendidos {
+  color: #ffffff; 
+}
+
+body.night-mode .imagenes-chicas img {
+  filter: brightness(0.8);  
+}
+
+body.night-mode .container {
+  background-color: #2e2e2e;  
+}
+
+body.night-mode .productos-relacionados-container {
+  background-color: #3b3b3b; }
+
+ body.night-mode #productos-relacionados .col {
+  background-color: #444; 
+  color: #ffffff;  
+ }
+
+body.night-mode h2 {
+  background-color: #4a4a4a; 
+  color: #ffcc00; 
+}
+
+body.night-mode .rating-back {
+  background-color: #3b3b3b; 
+}
+
+body.night-mode .rating-question {
+  background-color: #4a4a4a;  
+  color: #ffcc00; 
+}
+
+body.night-mode .rating-control {
+  background-color: #2e2e2e;  
+  color: #ffffff;  
+  border: 1px solid #ffcc00; 
+}
+
+body.night-mode .rating-content {
+  color: #ffcc00;  
+}
+
+body.night-mode .rating-buttton button {
+  background-color: #333;  
+  color: #ffcc00;  
+  border: 1px solid #ffcc00;  
+ }
