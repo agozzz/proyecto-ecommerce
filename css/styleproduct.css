@@ -75,6 +75,7 @@ body {
   }
   
   .navbar {
+    color: #000000;
     background-color: rgba(255, 255, 255, 1);
     border-bottom: 2px #000000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -98,6 +99,7 @@ body {
   }
 
   .nav-link3 img{
+    color: orange;
     width: 51px;
     height: auto;
     display: flex;
@@ -112,6 +114,26 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(255, 255, 255, 1);
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.1);
+    
+  }
+
+  #infoUsuario {
+    color: black;
+  }
+
+  .recorrido {
+    display: flex;
+    padding-left: 9.5%;
+    padding-top: 0.5%;
+    color: white;
+  }
+  
+  .enlacesRecorrido {
+    color: white;
+  }
+
+  .containerFooter {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 0.5%;
   }

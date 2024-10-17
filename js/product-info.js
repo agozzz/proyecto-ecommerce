@@ -65,7 +65,7 @@ function mostrarProductosRelacionados(relatedProducts) {
     if (relatedProducts && relatedProducts.length > 0) {
         relatedProducts.forEach(product => {
             let productoHTML = `
-                <div class="col">
+                <div class="col" style="cursor: pointer;">
                     <div class="card h-100 text-center custom-card cursor-active" onclick="actualizarProducto(${product.id})">
                         <img class="card-img-top img-thumbnail" src="${product.image}" alt="Imagen de ${product.name}" style="height: 150px; object-fit: cover;">
                         <div class="card-body">

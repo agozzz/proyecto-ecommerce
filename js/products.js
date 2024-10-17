@@ -31,8 +31,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 const card = document.createElement("div");
                 card.className = "card";
                 card.innerHTML = `
-                    <img src="${producto.image}" alt="${producto.name}">
-                    <div class="card-body">
+                    <img src="${producto.image}" alt="${producto.name}" style="cursor: pointer;">
+                    <div class="card-body" style="cursor: pointer;">
                         <div class="card-sup">
                             <h5 class="card-title">${producto.name}</h5>
                             <p class="card-precio">$${producto.cost}</p>
