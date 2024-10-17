@@ -303,7 +303,6 @@ margin-bottom: 10px;
   font-size: 20px;
 }
 
-
 button {
   padding: 10px 20px;
   cursor: pointer;
@@ -315,11 +314,10 @@ body.night-mode {
   color: #d6d6d6;
 }
 
-entrega5modonoche
 body.night-mode #toggleButton {
   background-color: #555;
 }
-main
+
 body.night-mode .navbar { 
   background-color: #333; 
   border-bottom: 2px #2e2e2e;
@@ -402,9 +400,8 @@ body.night-mode .container {
 }
 
 body.night-mode .productos-relacionados-container {
-  background-color: #3b3b3b; }
-
- 
+  background-color: #3b3b3b;
+ }
 
 body.night-mode h2 {
   background-color: #4a4a4a; 
