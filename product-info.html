@@ -13,7 +13,7 @@
   <!--cdn icon bootstrap--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
+<body class="day-mode">
   <nav class="navbar navbar-expand-lg p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,10 +22,15 @@
       </button>
       <div class="collapse navbar-collapse navbar fixed-top bg-body-tertiary container-fluid" id="navbarNav">
         <ul class="navbar-nav w-100  justify-content-between">
+      
           <li class="nav-item">
             <a class="nav-link" href="index.html" title="Inicio">
               <img src="img/logoecommerce.jpeg" alt="Logo e-commerce"></a>
           </li>
+          <div class="modonoche">
+            <button id="toggleButton"><i class="bi bi-moon-stars"></i></button>
+
+          </div>
           <div class="justify-content-end d-flex">
             <li class="nav-item1 dropdown" id="infoUsuarioContainer">
               <a class="nav-link dropdown-toggle" href="#" id="infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">  <!--El atributo data-bs-toggle lo utilizamos para indicar que es un menú desplegable de bootstrap-->
