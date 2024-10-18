@@ -18,6 +18,14 @@ document.addEventListener("DOMContentLoaded", function() {
     };
     
     button.addEventListener("click", login);
+
+     // Evento para permitir enviar al presionar Enter en el campo de contraseña
+     password.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault(); // Evitar el comportamiento por defecto
+            login(); // Llama a la función de inicio de sesión
+        }
+    });
     
     
     });
