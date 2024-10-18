@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <!---este sttyle ya venia dado-->
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -55,10 +56,40 @@
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container mt-5">
+      <h2>Mi Perfil</h2>
+      <!-- Espacio para la foto de perfil -->
+      <div class="text-center mb-4">
+        <img src="img/default-profile.png" id="profilePic" class="profile-pic" alt="Foto de perfil">
+        <input type="file" id="uploadPic" accept="image/*" class="form-control mt-2">
       </div>
+      <form id="profileForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre *</label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="segundoNombre" class="form-label">Segundo nombre</label>
+          <input type="text" class="form-control" id="segundoNombre">
+        </div>
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido *</label>
+          <input type="text" class="form-control" id="apellido" required>
+      </div>
+      <div class="mb-3">
+        <label for="segundoApellido" class="form-label">Segundo apellido</label>
+        <input type="text" class="form-control" id="segundoApellido">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email *</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono de contacto</label>
+        <input type="tel" class="form-control" id="telefono">
+      </div>
+      <button type="submit" class="btn btn-primary">Guardar cambios</button>
+    </form>
     </div>
   </main>
   <footer class="text-muted">
