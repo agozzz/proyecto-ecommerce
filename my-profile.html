@@ -7,7 +7,7 @@
   <title>eMercado - Todo lo que busques está aquí</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/my-profle.css" rel="stylesheet">
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -26,39 +26,71 @@
   </style>
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+<body class="day-mode">
+  <nav class="navbar navbar-expand-lg p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+      <div class="collapse navbar-collapse navbar fixed-top bg-body-tertiary container-fluid" id="navbarNav">
+        <ul class="navbar-nav w-100  justify-content-between">
+      
           <li class="nav-item">
-            <a class="nav-link" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html" title="Inicio">
+              <img src="img/logoecommerce.jpeg" alt="Logo e-commerce"></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
-          <li class="nav-item1 dropdown" id="infoUsuarioContainer">
-            <a class="nav-link dropdown-toggle" href="#" id="infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">  <!--El atributo data-bs-toggle lo utilizamos para indicar que es un menú desplegable de bootstrap-->
-              Hola, Usuario! <!-- Texto predeterminado que se mostrará antes de que se cargue el nombre con el que ingresó el usuario -->
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="infoUsuario"></ul> <!-- Contenedor del menú desplegable que se llenará dinámicamente con enlaces -->
-          </li>
+          <div class="modonoche">
+            <button id="toggleButton"><i class="bi bi-moon-stars"></i></button>
+
+          </div>
+          <div class="justify-content-end d-flex">
+            <li class="nav-item1 dropdown" id="infoUsuarioContainer">
+              <a class="nav-link dropdown-toggle" href="#" id="infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">  <!--El atributo data-bs-toggle lo utilizamos para indicar que es un menú desplegable de bootstrap-->
+                Hola, Usuario! <!-- Texto predeterminado que se mostrará antes de que se cargue el nombre con el que ingresó el usuario -->
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="infoUsuario"></ul> <!-- Contenedor del menú desplegable que se llenará dinámicamente con enlaces -->
+            </li>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container mt-5">
+      <!--<h2>Mi Perfil</h2>-->
+      <!-- Espacio para la foto de perfil -->
+      <div class="text-center mb-4">
+        <img src="img/person.png" id="profilePic" class="profile-pic" alt="Foto de perfil">
+        <input type="file" id="uploadPic" accept="image/*" class="form-control mt-2">
       </div>
+      <form id="profileForm">
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre  <span class="required">*</span></label>
+          <input type="text" class="form-control" id="nombre" required>
+        </div>
+        <div class="mb-3">
+          <label for="segundoNombre" class="form-label">Segundo nombre</label>
+          <input type="text" class="form-control" id="segundoNombre">
+        </div>
+        <div class="mb-3">
+          <label for="apellido" class="form-label">Apellido  <span class="required">*</span></label>
+          <input type="text" class="form-control" id="apellido" required>
+      </div>
+      <div class="mb-3">
+        <label for="segundoApellido" class="form-label">Segundo apellido</label>
+        <input type="text" class="form-control" id="segundoApellido">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email  <span class="required">*</span></label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono de contacto</label>
+        <input type="tel" class="form-control" id="telefono">
+      </div>
+      <button type="submit" class="save-btn">Guardar cambios</button>
+    </form>
     </div>
   </main>
   <footer class="text-muted">
@@ -72,6 +104,7 @@
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script src="js/user.js"></script>
 </body>
 
 </html>
