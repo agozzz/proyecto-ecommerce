@@ -61,3 +61,31 @@ document.addEventListener("DOMContentLoaded", function () {
         alert('Perfil actualizado correctamente.');
     });
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.getElementById('toggleButton');
+    const body = document.body;
+    const navbar = document.querySelector('.navbar');
+    const products = document.querySelectorAll('.product');
+
+    toggleButton.addEventListener('click', function () {
+        // Alterna entre los modos día y noche
+        body.classList.toggle('night-mode');
+        body.classList.toggle('day-mode');
+        navbar.classList.toggle('night-mode');
+        navbar.classList.toggle('day-mode');
+
+        // Cambia el modo de los productos también
+        products.forEach(product => {
+            product.classList.toggle('night-mode');
+            product.classList.toggle('day-mode');
+        });
+
+        // Actualiza el texto del botón
+        if (body.classList.contains('night-mode')) {
+            toggleButton.innerHTML = '<i class="bi bi-sun"></i>';
+        } else {
+            toggleButton.innerHTML = '<i class="bi bi-moon-stars"></i>';
+        }
+    });
+});

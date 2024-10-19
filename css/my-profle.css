@@ -5,8 +5,8 @@ body {
 
 /* Contenedor principal del perfil */
 .container {
-    max-width: 600px;
-    background-color: #F7CA69; /* Fondo ligeramente más claro que el fondo general */
+    max-width: 900px;
+    background-color: #EEAE39A6; /* Fondo ligeramente más claro que el fondo general */
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -16,11 +16,12 @@ body {
 
 /* Estilo para la imagen de perfil */
 .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%; /* Hace la imagen circular */
     background-color: #333; /* Color de fondo negro para la imagen ficticia */
     margin-bottom: 20px;
+    object-fit: cover; /* Esto asegura que la imagen se ajuste correctamente dentro del círculo */
 }
 
 /* Estilo de las etiquetas de los campos del formulario */
@@ -36,10 +37,21 @@ input[type="text"],
 input[type="email"],
 input[type="tel"] {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
+    padding: 10px 0;  /* Quita el padding lateral */
+    border: none;  /* Elimina los bordes */
+    border-bottom: 2px solid #000000; /* Solo agrega un borde inferior */
+    background-color: transparent; /* Hace el fondo transparente */
+    margin-bottom: 20px;
+    outline: none; /* Elimina el borde azul predeterminado */
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
+
+/* Efecto de cambio de color al hacer focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-bottom-color: black; /* Cambia el color de la línea inferior al hacer focus */
+    outline: none; /* Evita el borde del navegador */
 }
 
 /* Asterisco rojo para campos obligatorios */
@@ -47,10 +59,10 @@ label .required {
     color: red;
 }
 
-/* Botón de guardar cambios */
+/* Botón de guardar cambios en gris */
 button {
-    background-color: #4CAF50; /* Verde oscuro para el botón */
-    color: white;
+    background-color: lightgray; /* Color gris */
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -61,17 +73,34 @@ button {
 
 /* Cambio de color en hover sobre el botón */
 button:hover {
-    background-color: #45a049; /* Un verde más oscuro cuando se pasa el ratón */
+    background-color: gray; /* Un gris más oscuro cuando se pasa el ratón */
 }
 
 /* Estilo para la navegación */
 .navbar {
-    background-color: #333;
-}
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 2px #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 115px;
+  }
+
+  .nav-link img {
+    width: 80%;
+    height: auto;
+    display: block;
+    border: 1px solid orange;
+  }
 
 .nav-link {
-    color: white !important;
+    color: #333 !important;
 }
+
+.nav-item1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 /* Centrar el contenido del formulario */
 form {
@@ -83,3 +112,5 @@ h2 {
     color: #333;
     margin-bottom: 20px;
 }
+
+
