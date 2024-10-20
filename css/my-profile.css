@@ -4,7 +4,7 @@ body {
 }
 
 /* Contenedor principal del perfil */
-.container {
+#profileForm{
     max-width: 900px;
     background-color: #EEAE39A6; /* Fondo ligeramente más claro que el fondo general */
     border-radius: 10px;
@@ -113,4 +113,55 @@ h2 {
     margin-bottom: 20px;
 }
 
+/* Estilos para el modo noche */
+body.night-mode {
+    background-color: #2e2e2e;
+    color: #d6d6d6;
+  }
+  
+  body.night-mode #toggleButton {
+    background-color: #555;
+    
+  }
 
+  body.night-mode #infoUsuario {
+    color: white !important;
+  }  
+  
+  body.night-mode .navbar { 
+    background-color: #333; 
+    border-bottom: 2px #2e2e2e; 
+    height: 115px;
+    } 
+  
+  button.night-mode {
+    background-color: #333;
+    color: #c2c2c2;
+  }
+  body.night-mode #profileForm {
+    background-color: #4a4a4a !important;
+  }
+
+  body.night-mode .profile-pic {
+    background-color: #c2c2c2
+  }
+
+  body.night-mode label {
+    color: white;
+  }
+
+  body.night-mode input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    border-bottom: 2px solid white;
+    color: white;
+  }
+
+  body.night-mode input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus {
+    border-bottom-color: white;
+    outline: none;
+  }
+
+  
