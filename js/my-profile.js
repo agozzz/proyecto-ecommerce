@@ -61,6 +61,25 @@ document.addEventListener("DOMContentLoaded", function () {
         alert('Perfil actualizado correctamente.');
     });
 });
+    // Cambiar foto de perfil
+    const uploadPicInput = document.getElementById('uploadPic');
+    const profilePic = document.getElementById('profilePic');
+    uploadPicInput.addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                // Actualizar la imagen de perfil con la nueva foto
+                profilePic.src = e.target.result;
+
+                // Guardar la nueva imagen de perfil en localStorage
+                const updatedUserProfile = JSON.parse(localStorage.getItem('userProfile')) || {};
+                updatedUserProfile.fotoPerfil = e.target.result;
+                localStorage.setItem('userProfile', JSON.stringify(updatedUserProfile));
+            };
+            reader.readAsDataURL(file); // Leer la imagen como base64
+        }
+    });
 
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggleButton');
