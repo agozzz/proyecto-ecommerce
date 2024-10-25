@@ -55,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
             apellido: apellido,
             segundoApellido: document.getElementById('segundoApellido').value,
             telefono: document.getElementById('telefono').value,
-            email: email
+            email: email,
+            fotoPerfil: document.getElementById('profilePic').src // Guardar imagen en Base64
         }));
 
         alert('Perfil actualizado correctamente.');
