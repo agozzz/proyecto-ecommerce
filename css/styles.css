@@ -9,6 +9,10 @@
   font-weight: bold;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
@@ -258,59 +262,4 @@ a.custom-card:hover {
 .form-label {
   color: #333;
   font-weight: bold;
-}
-
-
-.nav-link img {
-  width: 80%;
-  height: auto;
-  display: block;
-  border: 1px solid orange;
-}
-
-.navbar {
-  color: #000000;
-  background-color: rgba(255, 255, 255);
-  border-bottom: 2px #000000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  height: 115px;
-}
-
-.nav-link1 img{
-  width: 51px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid black;
-  border-radius: 50%;
-}
-
-.nav-link2 img{
-  width: 80px;
-  height: auto;
-  display: flex;
-  margin: 0px;
-}
-
-.nav-link3 img{
-  color: orange;
-  width: 51px;
-  height: auto;
-  display: flex;
-}
-
-.nav-item{
-display: flex;
-background-color: transparent;
-}
-
-.nav-item1{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
-}
-
-#infoUsuario {
-  color: black;
 }
