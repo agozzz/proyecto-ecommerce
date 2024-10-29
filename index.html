@@ -12,42 +12,42 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
+  <nav class="navbar navbar-expand-lg p-1">
     <div class="container">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav w-100 justify-content-between">
+      <div class="collapse navbar-collapse navbar fixed-top bg-body-tertiary container-fluid" id="navbarNav">
+        <ul class="navbar-nav w-100  justify-content-between">
           <li class="nav-item">
-            <a class="nav-link active" href="index.html">Inicio</a>
+            <a class="nav-link" href="index.html" title="Inicio">
+              <img src="img/logoecommerce.jpeg" alt="Logo e-commerce"></a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="categories.html">Categorías</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sell.html">Vender</a>
-          </li>
+          <div class="justify-content-end d-flex">
           <li class="nav-item1 dropdown" id="infoUsuarioContainer">
             <a class="nav-link dropdown-toggle" href="#" id="infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">  <!--El atributo data-bs-toggle lo utilizamos para indicar que es un menú desplegable de bootstrap-->
               Hola, Usuario! <!-- Texto predeterminado que se mostrará antes de que se cargue el nombre con el que ingresó el usuario -->
             </a>
             <ul class="dropdown-menu" aria-labelledby="infoUsuario"></ul> <!-- Contenedor del menú desplegable que se llenará dinámicamente con enlaces -->
           </li>
+          </div>
         </ul>
       </div>
     </div>
   </nav>
   <main>
     <div class="jumbotron text-center"></div>
+    <div class="d-grid gap-2">
+      <button class="btn btn-outline-warning" type="button" onclick="window.location.href='categories.html';">Categorías</button>
+    </div>
     <div class="album py-5 bg-light">
       <div class="container">
         <div class="row">
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm custom-card cursor-active" id="autos">
               <img class="bd-placeholder-img card-img-top" src="img/cars_index.jpg"
-                alt="Imgagen representativa de la categoría 'Autos'">
+                alt="Imagen representativa de la categoría 'Autos'">
               <h3 class="m-3">Autos</h3>
               <div class="card-body">
                 <p class="card-text">Los mejores precios en autos 0 kilómetro, de alta y media gama.</p>
@@ -57,7 +57,7 @@
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm custom-card cursor-active" id="juguetes">
               <img class="bd-placeholder-img card-img-top" src="img/toys_index.jpg"
-                alt="Imgagen representativa de la categoría 'Juguetes'">
+                alt="Imagen representativa de la categoría 'Juguetes'">
               <h3 class="m-3">Juguetes</h3>
               <div class="card-body">
                 <p class="card-text">Encuentra aquí los mejores precios para niños/as de cualquier edad.</p>
@@ -67,7 +67,7 @@
           <div class="col-md-4">
             <div class="card mb-4 shadow-sm custom-card cursor-active" id="muebles">
               <img class="bd-placeholder-img card-img-top" src="img/furniture_index.jpg"
-                alt="Imgagen representativa de la categoría 'Muebles'">
+                alt="Imagen representativa de la categoría 'Muebles'">
               <h3 class="m-3">Muebles</h3>
               <div class="card-body">
                 <p class="card-text">Muebles antiguos, nuevos y para ser armados por uno mismo.</p>
