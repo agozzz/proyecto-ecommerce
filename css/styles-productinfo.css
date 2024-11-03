@@ -12,42 +12,21 @@ body {
   background-color: #EEAE39;
 }
 
-.nav-link img {
+
+.navbar-brand img {
   width: 80%;
   height: auto;
   display: block;
-  border: 1px solid orange;
 }
 
 .navbar {
   color: #000000;
-    background-color: #f8f7f7;
-    border-bottom: 2px #000000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 115px;
+  background-color: #f8f9fa; /* Cambia esto a lo que necesitas, por ejemplo: #ffffff */
+  border-bottom: 2px #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 115px;
 }
 
-.nav-link1 img{
-  width: 51px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid black;
-  border-radius: 50%;
-}
-
-.nav-link2 img{
-  width: 80px;
-  height: auto;
-  display: flex;
-  margin: 0px;
-}
-
-.nav-link3 img{
-  width: 51px;
-  height: auto;
-  display: flex;
-}
 
 .nav-item{
 display: flex;
@@ -60,23 +39,42 @@ background-color: transparent;
   align-items: center;
 }
 
+#infoUsuario {
+  color: black;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    padding: 0;
+    height: auto; /* Permite que la altura se ajuste automáticamente */
+    margin-right: 0%;
+  }
+
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+    margin: 0; /* Elimina márgenes innecesarios */
+  }
+}
+
 
 .product {
   padding: 20px; 
   display: flex;
-  justify-content: center;
-  
   width: 95%;
-
 }
 
 
 .product-imagen img {
   width: 500px;
-  margin: 10px 23%;
+  padding-top: 3vh;
+  margin-top: -6vh;
+  margin-left: 25vh;
   display: flexbox;  
 }
 
+.producto-info {
+  margin-top: -5vh;
+}
 
 .producto-info h1 {
   font-size: 1.8rem;
@@ -101,7 +99,7 @@ background-color: transparent;
   padding-bottom: 180px;
 }
 
-.precio{
+.precio {
   font-size: 1.2rem;
   font-weight: bold;
   background-color: #d49a2f;
@@ -110,6 +108,20 @@ background-color: transparent;
   margin-left: 120px;
 
 }
+
+@media (max-width: 992px) {
+  .product {
+    display: flex;
+    align-items: center;
+  }
+  .product-imagen img {
+    width: 500px;
+    align-items: center;
+    display: flexbox;  
+  } 
+}
+
+
 
 h1, .descripcion, .precio, .boton {
   margin-block-start: 0;
@@ -129,21 +141,24 @@ h1, .descripcion, .precio, .boton {
 }
 
 .imagenes-chicas {
-  padding-left: 200px; 
+  margin-left: 25vh; 
   display: flex;      
   gap: 20px;             
 }
 
 .imagenes-chicas img {
   width: 130px;
+  margin-top: -7vh;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
 .container {
-display: flex;
-flex-direction: column; 
-align-items: center;
-}
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  }
 
 .productos-relacionados-container {
 background-color: #eec77ef8; 
@@ -321,8 +336,8 @@ body.night-mode #toggleButton {
 
 body.night-mode .navbar { 
   background-color: #333; 
-  border-bottom: 2px #2e2e2e; 
-  height: 115px; } 
+  border-bottom:#2e2e2e; 
+} 
 
 button.night-mode {
   background-color: #333;
@@ -427,7 +442,7 @@ body.night-mode .rating-content {
 body.night-mode .rating-buttton button {
   background-color: #333;  
   color: #ffcc00;  
-  border: 1px solid #ffcc00;  
+  border: #ffcc00;  
  }
 
 

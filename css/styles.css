@@ -38,6 +38,12 @@
   font-weight: bold;
 }
 
+@media (max-width: 768px)  {
+  .jumbotron {
+    height: 20vh;
+  }
+}
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: 6rem;
@@ -261,43 +267,20 @@ a.custom-card:hover {
   font-weight: bold;
 }
 
-.nav-link img {
+.navbar-brand img {
   width: 80%;
   height: auto;
   display: block;
-  border: 1px solid orange;
 }
 
 .navbar {
   color: #000000;
-  background-color: rgba(255, 255, 255);
+  background-color: #f8f9fa;
   border-bottom: 2px #000000;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   height: 115px;
 }
 
-.nav-link1 img{
-  width: 51px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border: 2px solid black;
-  border-radius: 50%;
-}
-
-.nav-link2 img{
-  width: 80px;
-  height: auto;
-  display: flex;
-  margin: 0px;
-}
-
-.nav-link3 img{
-  color: orange;
-  width: 51px;
-  height: auto;
-  display: flex;
-}
 
 .nav-item{
 display: flex;
@@ -308,9 +291,24 @@ background-color: transparent;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
 }
 
 #infoUsuario {
   color: black;
+}
+
+@media (max-width: 992px) { /* Para pantallas MD y SM */
+  .navbar {
+      height: 10vh; 
+      padding: 0; 
+      display: flex; 
+      align-items: center; 
+  }
+
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+      padding-top: 0.2%; 
+      padding-bottom: 0.5%;
+      margin-right: 1vh;
+  }
 }
