@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
     renderizarCarrito();
 });
 
-    function renderizarCarrito() {
-        const cartContainer = document.getElementById("cart-items");
+function renderizarCarrito() {
+    const cartContainer = document.getElementById("cart-items");
 
-        // Verificar si el contenedor existe
-        if (!cartContainer) {
-            console.error("Elemento con ID 'cart-items' no encontrado.");
-            return;
-        }
+    // Verificar si el contenedor existe
+    if (!cartContainer) {
+        console.error("Elemento con ID 'cart-items' no encontrado.");
+        return;
+    }
 
         const products = JSON.parse(localStorage.getItem("selectedProducts")) || [];
 
