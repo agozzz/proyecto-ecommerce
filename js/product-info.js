@@ -189,7 +189,10 @@ function saveProductToLocalStorage() {
     // Obtener información del producto
     const productName = document.querySelector(".name").textContent;
     const productDescription = document.querySelector(".descripcion").textContent;
-    const productPrice = document.querySelector(".precio").textContent;
+    
+    // Extraer solo el valor numérico del precio
+    const productPrice = parseFloat(document.querySelector(".precio").textContent.replace("Precio: $", "").trim());
+    
     const productImage = document.querySelector("#imagen-principal").src;
     const prodID = localStorage.getItem("prodID"); // Obtener el ID de producto almacenado en localStorage
 
