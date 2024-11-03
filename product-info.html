@@ -14,53 +14,48 @@
 </head>
 
 <body class="day-mode">
-  <nav class="navbar navbar-expand-lg p-1">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse navbar fixed-top bg-body-tertiary container-fluid" id="navbarNav">
-        <ul class="navbar-nav w-100  justify-content-between">
-      
-          <li class="nav-item">
-            <a class="nav-link" href="index.html" title="Inicio">
-              <img src="img/logoecommerce.jpeg" alt="Logo e-commerce"></a>
-          </li>
-          <div class="justify-content-end d-flex">
-            <li class="nav-item1 dropdown" id="infoUsuarioContainer">
-              <a class="nav-link dropdown-toggle" href="#" id="infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">  <!--El atributo data-bs-toggle lo utilizamos para indicar que es un menú desplegable de bootstrap-->
-                Hola, Usuario! <!-- Texto predeterminado que se mostrará antes de que se cargue el nombre con el que ingresó el usuario -->
+        <div class="navbar-collapse navbar fixed-top bg-body-tertiary container-fluid" id="navbarNav">
+            <ul class="navbar-nav w-100 justify-content-between">
+              <a class="navbar-brand" href="index.html" title="Inicio">
+                <img src="img/logoecommerce.jpeg" alt="Logo e-commerce" class="d-none d-lg-block">
               </a>
-              <ul class="dropdown-menu" aria-labelledby="infoUsuario"></ul> <!-- Contenedor del menú desplegable que se llenará dinámicamente con enlaces -->
-            </li>
-          </div>
-        </ul>
-      </div>
+                <div class="justify-content-end d-flex">
+                    <li class="nav-item dropdown ms-auto align-self-center" id="infoUsuarioContainer">
+                        <a class="nav-link dropdown-toggle" href="#" id="infoUsuario" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hola, Usuario! <!-- Texto predeterminado que se mostrará antes de que se cargue el nombre con el que ingresó el usuario -->
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="infoUsuario"> <!-- Contenedor del menú desplegable que se llenará dinámicamente con enlaces -->
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </div>
     </div>
   </nav>
 <div class= "recorrido">
   <nav> <p1><a href="categories.html" class="enlacesRecorrido">Categorías</a><a> > </a><a href="products.html" class="enlacesRecorrido">Productos</a> > Información del producto</p1>
   </nav>
 </div>
-<div class="product">
-  <div class="product-imagen">
-    <img id="imagen-principal" src="" alt="producto principal">
+<div class="product row">
+  <div class="col-12 col-lg-6 product-imagen">
+    <img id="imagen-principal" src="" alt="producto principal" class="img-fluid">
   </div>
-  <div class="producto-info">
+
+  <div class="col-12 col-lg-6 producto-info">
     <h1 class="name"></h1>
     <p class="descripcion"></p>
     <p class="precio"></p>
     <button class="boton">Comprar</button>
     <p class="vendidos"></p>
   </div>
-</div>
 
-<div class="imagenes-chicas">
-  <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
-  <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
-  <img class="imagchica" src="" alt="Producto" onclick="seleccionarImagen(this)">
-
+  <div class="imagenes-chicas d-flex mt-3 col-12">
+    <img class="imagchica img-thumbnail" src="" alt="Producto" onclick="seleccionarImagen(this)">
+    <img class="imagchica img-thumbnail" src="" alt="Producto" onclick="seleccionarImagen(this)">
+    <img class="imagchica img-thumbnail" src="" alt="Producto" onclick="seleccionarImagen(this)">
+  </div>
 </div>
 
 

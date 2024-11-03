@@ -1,54 +1,47 @@
-.nav-link img {
-    width: 80%;
-    height: auto;
-    display: block;
-    border: 1px solid orange;
-  }
-  
-  .navbar {
-    color: #000000;
-    background-color: rgba(255, 255, 255);
-    border-bottom: 2px #000000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 115px;
-  }
-  
-  .nav-link1 img{
-    width: 51px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border: 2px solid black;
-    border-radius: 50%;
-  }
-  
-  .nav-link2 img{
-    width: 80px;
-    height: auto;
-    display: flex;
-    margin: 0px;
-  }
-  
-  .nav-link3 img{
-    color: orange;
-    width: 51px;
-    height: auto;
-    display: flex;
-  }
-  
-  .nav-item{
+.navbar-brand img {
+  width: 80%;
+  height: auto;
+  display: block;
+}
+
+.navbar {
+  color: #000000;
+  background-color: #f8f9fa; /* Cambia esto a lo que necesitas, por ejemplo: #ffffff */
+  border-bottom: 2px #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 115px;
+}
+
+
+.nav-item{
+display: flex;
+background-color: transparent;
+}
+
+.nav-item1{
   display: flex;
-  background-color: transparent;
-  }
+  justify-content: space-between;
+  align-items: center;
   
-  .nav-item1{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+}
+
+@media (max-width: 992px) { /* Para pantallas MD y SM */
+  .navbar {
+      height: 10vh; 
+      padding: 0; 
+      display: flex; 
+      align-items: center; 
   }
-  
-  #infoUsuario {
-    color: black;
+
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+      padding-top: 0.2%; 
+      padding-bottom: 0.5%;
+      margin-right: 1vh;
   }
+}
+
+#infoUsuario {
+  color: black;
+}
   
