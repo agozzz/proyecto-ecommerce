@@ -1,28 +1,30 @@
 //DESAFÍATE de la Entrega N°2 mejorado, con lo agregado del punto 2 de la Entrega N°5.
 
 document.addEventListener("DOMContentLoaded", function() {
-    let menuDeUsuario = document.getElementById("infoUsuario"); //Obtenemos el elemento HTML donde se mostrará el nombre de usuario con el menú desplegable
-    let dropdownMenu = document.querySelector("#infoUsuarioContainer .dropdown-menu"); //Seleccionamos el menú desplegable que se encuentra dentro del contenedor de usuario
-    let usuario = localStorage.getItem("username"); //Obtenemos el nombre de usuario almacenado en LocalStorage
-    
+    let menuDeUsuario = document.getElementById("infoUsuario"); 
+    let dropdownMenu = document.querySelector("#infoUsuarioContainer .dropdown-menu");
+    let usuario = localStorage.getItem("username"); 
+    let carrito = JSON.parse(localStorage.getItem("selectedProducts")) || []; // Obtén el carrito de localStorage
+    let totalItems = carrito.length; // Cuenta los artículos en el carrito
 
-    menuDeUsuario.innerHTML = `Hola, ${usuario}!`; //Establecemos el texto del botón de usuario con un saludo y su nombre de usuario
+    menuDeUsuario.innerHTML = `Hola, ${usuario}!`;
 
-    //Creamos el HTML para el menú desplegable con los enlaces a las secciones correspondientes
+    // Crear el HTML del menú desplegable con el número de artículos en el carrito
     dropdownMenu.innerHTML = `
-        <li><button class="dropdown-item" id="toggleButton"><i class="bi bi-moon-stars"></i></button></li>
-        <li><a class="dropdown-item" href="cart.html">Carrito</a></li>
+        <li><button class="dropdown-item btn btn-primary" id="toggleButton"><i class="bi bi-moon-stars"></i></button></li>
+        <li><a class="dropdown-item" href="cart.html">Carrito <span id="badge-carrito" class="badge" style="background-color: #6c757d; color: white; padding: 0.6em; ">${totalItems}</span></a></li>
         <li><a class="dropdown-item" href="sell.html">Vender</a></li>
         <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
         <li><a class="dropdown-item" href="#" id="logout">Cerrar sesión</a></li>
     `;
 
-    //Acá agregamos la funcionalidad para el cierre de sesión
-    document.getElementById("logout").addEventListener("click", function() { //Evento "click" sobre Cerrar sesión, que lleva el id "logout"
-        localStorage.removeItem("username"); //Elimina el usuario almacenado en LocalStorage
-        window.location.href = "login.html"; //Redirige a la pantalla de inicio de sesión
+    // Funcionalidad para cerrar sesión
+    document.getElementById("logout").addEventListener("click", function() { 
+        localStorage.removeItem("username"); 
+        window.location.href = "login.html"; 
     });
 });
+
 
 
 //Acá agregamos la funcionalidad para cambiar a Modo Noche o Modo día
