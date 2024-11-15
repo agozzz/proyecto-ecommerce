@@ -91,3 +91,20 @@ function actualizarBadgeCarrito() {
         badge.innerText = totalProducts; // Actualizar el contenido del badge
     }
 }
+// Función para mostrar el popup de dirección de envío
+document.addEventListener("DOMContentLoaded", function () {
+    const addAddressBtn = document.querySelector(".add-address-btn");
+    const addressPopup = document.querySelector(".address-popup");
+    const cancelBtn = document.querySelector(".cancel-btn");
+
+    // Mostrar el popup al hacer clic en "Agregar dirección"
+    addAddressBtn.addEventListener("click", function () {
+    addressPopup.style.display = "block";
+    });
+
+    // Ocultar el popup al hacer clic en "Cancelar"
+    cancelBtn.addEventListener("click", function () {
+    addressPopup.style.display = "none";
+    });
+});
+

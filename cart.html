@@ -37,7 +37,53 @@
     <div class="container">
       <h2>Carrito de compras</h2>
     <div id="cart-items"></div>
-    <button class="continue-btn">Continuar compra</button>
+    <a href="#preferences" class="continue-btn">Continuar compra</a>
+    </div>
+    <div class="preferences-container" id="preferences">
+      <h3>Preferencias</h3>
+      <div class="shipping-type">
+        <h4>Tipo de envío:</h4>
+        <label><input type="radio" name="shipping" value="0.15"> Premium 2 a 5 días (15%)</label><br>
+        <label><input type="radio" name="shipping" value="0.07"> Express 5 a 8 días (7%)</label><br>
+        <label><input type="radio" name="shipping" value="0.05"> Standard 12 a 15 días (5%)</label>
+      </div>
+      <div class="shipping-address">
+        <h4>¿A dónde enviaremos tu compra?</h4>
+        <button class="add-address-btn">Agregar dirección de envío</button>
+        <div class="address-popup" style="display: none;">
+          <h4>Datos de envío</h4>
+          <label for="department">Departamento</label>
+          <input type="text" id="department" name="department"><br>
+          <label for="locality">Localidad</label>
+          <input type="text" id="locality" name="locality"><br>
+          <label for="street">Calle</label>
+          <input type="text" id="street" name="street"><br>
+          <label for="number">Número</label>
+          <input type="text" id="number" name="number"><br>
+          <label for="corner">Esquina</label>
+          <input type="text" id="corner" name="corner">
+          <button class="cancel-btn">Cancelar</button>
+          <button class="save-btn">Guardar</button>
+        </div>
+      </div>
+      <div class="payment-method">
+        <h4>Forma de pago:</h4>
+        <div class="dropdown-container">
+          <select id="payment-method" class="dropdown-select">
+            <option value="" disabled selected>Selecciona tu forma de pago</option>
+            <option value="credit-card">Tarjeta de crédito</option>
+            <option value="bank-transfer">Transferencia bancaria</option>
+            <option value="cash">Efectivo</option>
+            <option value="other">Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="costs">
+        <span>Subtotal: <span id="subtotal">0</span></span><br>
+        <span>Costo de envío: <span id="shipping-cost">0</span></span><br>
+        <strong>Total: <span id="total">0</span></strong>
+      </div>
+      <button class="finish-btn">Finalizar compra</button>
     </div>
   </main>
   <footer class="text-muted">
