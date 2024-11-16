@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
     renderizarCarrito();
     actualizarBadgeCarrito(); // Llamada para que el badge refleje el estado inicial
+    actualizarCostos(); // Calcular los costos iniciales
+    configurarTipoEnvio(); // Configurar eventos para los tipos de envío
 });
 
 function renderizarCarrito() {
@@ -22,6 +24,9 @@ function renderizarCarrito() {
     if (products.length === 0) {
         // Si no hay productos, mostrar un mensaje de carrito vacío
         cartContainer.innerHTML = "<p>No hay ningún producto en el carrito.</p>";
+        document.getElementById("subtotal").innerText = "0.00";
+            document.getElementById("shipping-cost").innerText = "0.00";
+            document.getElementById("total").innerText = "0.00";
     } else {
         products.forEach(product => {
             const price = Number(product.price) || 0;
@@ -49,9 +54,8 @@ function renderizarCarrito() {
             cartContainer.appendChild(productElement);
         });
     }
-
-    // Actualizar el badge después de renderizar
-    actualizarBadgeCarrito();
+    actualizarCostos(); // Recalcular costos cada vez que se renderiza el carrito
+    actualizarBadgeCarrito();// Actualizar el badge después de renderizar
 }
 
 // Función para calcular el subtotal de un producto
@@ -81,6 +85,28 @@ function eliminarProducto(nombreProducto) {
     renderizarCarrito();
 }
 
+// Configurar eventos para los tipos de envío
+function configurarTipoEnvio() {
+    const shippingOptions = document.querySelectorAll('input[name="shipping"]');
+    shippingOptions.forEach(option => {
+        option.addEventListener("change", actualizarCostos);
+    });
+}
+
+// Calcular y actualizar los costos en tiempo real
+function actualizarCostos() {
+    const products = JSON.parse(localStorage.getItem("selectedProducts")) || [];
+    const subtotal = products.reduce((acc, product) => acc + (product.price * (product.quantity || 1)), 0);
+
+    const shippingRate = Number(document.querySelector('input[name="shipping"]:checked')?.value) || 0;
+    const shippingCost = subtotal * shippingRate;
+    const total = subtotal + shippingCost;
+
+    // Actualizar en el HTML
+    document.getElementById("subtotal").innerText = subtotal.toFixed(2);
+    document.getElementById("shipping-cost").innerText = shippingCost.toFixed(2);
+    document.getElementById("total").innerText = total.toFixed(2);
+}
 // Función para actualizar el badge del carrito
 function actualizarBadgeCarrito() {
     const products = JSON.parse(localStorage.getItem("selectedProducts")) || [];
