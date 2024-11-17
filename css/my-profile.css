@@ -209,4 +209,8 @@ body.night-mode .save-btn:hover {
   color: #ffffff; 
   border-color: #555; 
 }
+
+body.night-mode a {
+  color: #ffcc00;
+}
   
