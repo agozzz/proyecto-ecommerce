@@ -122,15 +122,99 @@ document.addEventListener("DOMContentLoaded", function () {
     const addAddressBtn = document.querySelector(".add-address-btn");
     const addressPopup = document.querySelector(".address-popup");
     const cancelBtn = document.querySelector(".cancel-btn");
+    const saveBtn = document.querySelector(".save-btn");
 
     // Mostrar el popup al hacer clic en "Agregar dirección"
     addAddressBtn.addEventListener("click", function () {
-    addressPopup.style.display = "block";
+        addressPopup.style.display = "block";
     });
 
     // Ocultar el popup al hacer clic en "Cancelar"
     cancelBtn.addEventListener("click", function () {
-    addressPopup.style.display = "none";
+        addressPopup.style.display = "none";
     });
+
+    // Guardar la dirección y actualizar el texto del botón
+    saveBtn.addEventListener("click", function () {
+        const department = document.getElementById("department").value.trim();
+        const locality = document.getElementById("locality").value.trim();
+        const street = document.getElementById("street").value.trim();
+        const number = document.getElementById("number").value.trim();
+        const corner = document.getElementById("corner").value.trim();
+
+        // Validar que todos los campos estén llenos
+        if (!department || !locality || !street || !number || !corner) {
+            alert("Por favor, completa todos los campos de la dirección.");
+            return;
+        }
+
+        // Crear la dirección completa
+        const fullAddress = `${street} ${number}, esquina ${corner}, ${locality}, ${department}`;
+
+        // Actualizar el texto del botón
+        addAddressBtn.textContent = `Dirección: ${fullAddress}`;
+
+        // Opcional: guardar la dirección en localStorage para persistencia
+        localStorage.setItem("shippingAddress", fullAddress);
+
+        // Ocultar el popup
+        addressPopup.style.display = "none";
+    });
+
+    // Al cargar la página, verifica si hay una dirección guardada
+    const savedAddress = localStorage.getItem("shippingAddress");
+    if (savedAddress) {
+        addAddressBtn.textContent = `Dirección: ${savedAddress}`;
+    }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const finishBtn = document.querySelector(".finish-btn");
+    finishBtn.addEventListener("click", finalizarCompra);
+});
+
+function finalizarCompra() {
+    // Validar dirección de envío
+    const department = document.getElementById("department").value.trim();
+    const locality = document.getElementById("locality").value.trim();
+    const street = document.getElementById("street").value.trim();
+    const number = document.getElementById("number").value.trim();
+    const corner = document.getElementById("corner").value.trim();
+
+    if (!department || !locality || !street || !number || !corner) {
+        alert("Por favor, completa todos los campos de la dirección de envío.");
+        return;
+    }
+
+    // Validar tipo de envío
+    const shippingSelected = document.querySelector('input[name="shipping"]:checked');
+    if (!shippingSelected) {
+        alert("Por favor, selecciona un tipo de envío.");
+        return;
+    }
+
+    // Validar productos en el carrito
+    const products = JSON.parse(localStorage.getItem("selectedProducts")) || [];
+    if (products.length === 0) {
+        alert("El carrito está vacío. Agrega productos para continuar.");
+        return;
+    }
+    for (const product of products) {
+        if (!product.quantity || product.quantity <= 0) {
+            alert(`La cantidad del producto "${product.name}" no es válida.`);
+            return;
+        }
+    }
+
+    // Validar forma de pago
+    const paymentMethod = document.getElementById("payment-method").value;
+    if (!paymentMethod) {
+        alert("Por favor, selecciona una forma de pago.");
+        return;
+    }
+
+    // Mostrar mensaje de éxito si todas las validaciones son correctas
+    alert("¡Compra realizada con éxito! Gracias por tu compra.");
+    localStorage.removeItem("selectedProducts"); // Limpia el carrito
+    renderizarCarrito(); // Actualiza la interfaz
+}
