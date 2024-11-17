@@ -1,33 +1,49 @@
-//DESAFÍATE de la Entrega N°2 mejorado, con lo agregado del punto 2 de la Entrega N°5.
-
-document.addEventListener("DOMContentLoaded", function() {
-    let menuDeUsuario = document.getElementById("infoUsuario"); 
+document.addEventListener("DOMContentLoaded", function () {
+    let menuDeUsuario = document.getElementById("infoUsuario");
     let dropdownMenu = document.querySelector("#infoUsuarioContainer .dropdown-menu");
-    let usuario = localStorage.getItem("username"); 
+    let usuario = localStorage.getItem("username");
     let carrito = JSON.parse(localStorage.getItem("selectedProducts")) || []; // Obtén el carrito de localStorage
     let totalItems = carrito.length; // Cuenta los artículos en el carrito
 
     menuDeUsuario.innerHTML = `Hola, ${usuario}!`;
 
-    // Crear el HTML del menú desplegable con el número de artículos en el carrito
+    // Crear el HTML del menú desplegable con el ícono de inicio, modo noche y el carrito
     dropdownMenu.innerHTML = `
-        <li><button class="dropdown-item btn btn-primary" id="toggleButton"><i class="bi bi-moon-stars"></i></button></li>
-        <li><a class="dropdown-item" href="cart.html">Carrito <span id="badge-carrito" class="badge" style="background-color: #6c757d; color: white; padding: 0.6em; ">${totalItems}</span></a></li>
-        <li><a class="dropdown-item" href="sell.html">Vender</a></li>
-        <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-        <li><a class="dropdown-item" href="#" id="logout">Cerrar sesión</a></li>
+        <li>
+            <a class="dropdown-item d-flex align-items-center" href="index.html">
+                <i class="bi bi-house-fill me-2"></i> Inicio
+            </a>
+        </li>
+        <li>
+            <button class="dropdown-item btn btn-primary d-flex align-items-center" id="toggleButton">
+                <i class="bi bi-moon-stars me-2"></i> Modo Noche
+            </button>
+        </li>
+        <li>
+            <a class="dropdown-item d-flex align-items-center" href="cart.html">
+                <i class="bi bi-cart me-2"></i> Carrito 
+                <span id="badge-carrito" class="badge" style="background-color: #6c757d; color: white; padding: 0.6em;">${totalItems}</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="sell.html">Vender</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+        </li>
+        <li>
+            <a class="dropdown-item" href="#" id="logout">Cerrar sesión</a>
+        </li>
     `;
 
     // Funcionalidad para cerrar sesión
-    document.getElementById("logout").addEventListener("click", function() { 
-        localStorage.removeItem("username"); 
-        window.location.href = "login.html"; 
+    document.getElementById("logout").addEventListener("click", function () {
+        localStorage.removeItem("username");
+        window.location.href = "login.html";
     });
 });
 
-
-
-//Acá agregamos la funcionalidad para cambiar a Modo Noche o Modo día
+// Acá agregamos la funcionalidad para cambiar a Modo Noche o Modo día
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.getElementById('toggleButton');
     const body = document.body;
