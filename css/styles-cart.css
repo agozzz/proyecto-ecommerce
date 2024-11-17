@@ -301,3 +301,110 @@ h2 {
   cursor: pointer;
 }
 
+/* Modo noche */
+
+body.night-mode {
+  background-color: #121212; /* Fondo oscuro */
+  color: #ffcc00; /* Texto claro */
+}
+
+body.night-mode h2,
+body.night-mode h3,
+body.night-mode h4 {
+  color: #ffcc00;
+}
+
+body.night-mode .cart-container {
+  background-color: #1f1f1f; /* Fondo oscuro del carrito */
+  color: #ffcc00; /* Texto claro */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.night-mode .cart-item {
+  background-color: #333333; /* Fondo oscuro del producto */
+  color: #ffcc00;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.night-mode .cost,
+body.night-mode .subtotal {
+  background-color: #444444;
+  color: #ffcc00;
+}
+
+body.night-mode .quantity-btn {
+  background-color: #555555;
+  color: #ffcc00;
+}
+
+body.night-mode .quantity-btn:hover {
+  background-color: #777777;
+}
+
+body.night-mode .remove-link {
+  color: #ff7043;
+}
+
+body.night-mode .continue-btn {
+  background-color: #333333;
+  color: #ffcc00;
+  border: 1px solid #555555;
+}
+
+body.night-mode .preferences-container {
+  background-color: #1f1f1f;
+  color: #ffcc00;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.night-mode .preferences-container h3 {
+  background-color: #333333;
+}
+
+body.night-mode .finish-btn {
+  background-color: #444444;
+  color: #ffcc00;
+}
+
+body.night-mode .costs {
+  background-color: #333333;
+  color: #ffcc00;
+}
+
+body.night-mode .shipping-address,
+body.night-mode .address-popup {
+  background-color: #1f1f1f;
+  color: #ffcc00;
+}
+
+body.night-mode .address-popup input[type="text"] {
+  background-color: #333333;
+  color: #ffcc00;
+  border: 1px solid #555555;
+}
+
+body.night-mode .add-address-btn {
+  color: #ff7043;
+}
+
+body.night-mode .cancel-btn,
+body.night-mode .save-btn {
+  background-color: #333333;
+  color: #ffcc00;
+}
+
+body.night-mode .dropdown-select {
+  background-color: #333333;
+  color: #ffcc00;
+  border: 1px solid #555555;
+}
+
+body.night-mode .navbar {
+  background-color: #333;
+  border-bottom: 2px #2e2e2e;
+  height: 115px;
+}
+
+body.night-mode #infoUsuario {
+  color: white;
+}
