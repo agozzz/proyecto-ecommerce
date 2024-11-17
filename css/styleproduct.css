@@ -134,24 +134,22 @@ body {
 
   /*modo noche*/
 
+    
+  body.night-mode #infoUsuario {
+    color: white !important;
+  }  
+  
   body.night-mode .navbar { 
     background-color: #333; 
     border-bottom: 2px #2e2e2e; 
-    height: 115px; }
-
-body.night-mode #infoUsuario {
-  color: white;
-}
+    height: 115px;
+    }
 
 body.night-mode {
   background-color: #121212;
   color: #ffcc00;
 }
 
-body.night-mode .navbar {
-  background-color: #1f1f1f; 
-  color: #ffcc00;
-}
 
 body.night-mode .card-precio {
   font-size: 20px;

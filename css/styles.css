@@ -315,11 +315,6 @@ background-color: transparent;
 
 /* modo noche*/
 
-body.night-mode .navbar {
-  background-color: #333;
-  border-bottom: 2px #2e2e2e;
-  height: 115px;
-}
 
 body.night-mode #infoUsuario {
   color: white;
@@ -328,6 +323,11 @@ body.night-mode #infoUsuario {
 body.night-mode {
   background-color: #121212; /* Fondo oscuro */
   color: #ffcc00; /* Texto claro */
+}
+body.night-mode .navbar {
+  background-color: #333;
+  border-bottom: 2px #2e2e2e;
+  height: 115px;
 }
 
 body.night-mode .jumbotron {
@@ -339,10 +339,7 @@ body.night-mode .jumbotron .container {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-body.night-mode footer {
-  background-color: #1e1e1e;
-  color: #ffcc00;
-}
+
 
 body.night-mode .site-header a {
   color: #ffcc00;
@@ -386,10 +383,6 @@ body.night-mode .profile-pic {
   background-color: #555555;
 }
 
-body.night-mode .navbar {
-  background-color: #1e1e1e;
-  color: #ffcc00;
-}
 
 body.night-mode .btn-light {
   background-color: #444444;
@@ -423,10 +416,10 @@ body.night-mode .list-group .list-group-item:hover {
 }
 
 body.night-mode a {
-  color: #ffcc00; /* Un color distintivo para enlaces en modo noche */
+  color: #ffcc00;
 }
 
-/*index html*/
+/* modo noche en index html*/
 
 body.night-mode .card {
   background-color: #2c2c2c;
@@ -434,7 +427,7 @@ body.night-mode .card {
 }
 
 body.night-mode .card:hover {
-  background-color: #383838; /* Fondo ligeramente más claro al pasar el mouse */
+  background-color: #383838; /* Fondo más claro al pasar el mouse */
 }
 
 body.night-mode .card h3 {
@@ -446,6 +439,48 @@ body.night-mode .card p {
 
 body.night-mode .btn-light:hover {
   background-color: #383838; /* Fondo al pasar el mouse */
-  color: #ffffff; /* Texto más claro */
+  color: #ffffff; 
 }
+
+/* modo noche en sell html*/
+
+
+body.night-mode .form-control, 
+body.night-mode .form-select {
+  background-color: #333; 
+  color: #e0e0e0; 
+  border: 1px solid #444; 
+}
+
+body.night-mode .btn-primary {
+  background-color: #444;
+  color: #ffcc00;
+  border: 1px solid #555; 
+}
+
+body.night-mode .btn-primary:hover {
+  background-color: #333; 
+}
+
+body.night-mode .alert-primary {
+  background-color: #333; 
+  color: #e0e0e0; 
+ }
+
+body.night-mode .modal-content {
+  background-color: #333; /* modal, aviso gold, premium o estandar*/
+  color: #e0e0e0; 
+}
+
+body.night-mode .modal-header {
+  border-bottom: 1px solid #444;
+}
+
+body.night-mode .modal-footer {
+  border-top: 1px solid #444; 
+}
+
+
+
+
 
