@@ -67,14 +67,19 @@ function calcularSubtotal(price, quantity) {
 function actualizarCantidad(nombreProducto, cambio) {
     const products = JSON.parse(localStorage.getItem("selectedProducts")) || [];
     const product = products.find(p => p.name === nombreProducto);
-
+  
     if (product) {
-        product.quantity = (product.quantity || 1) + cambio;
-        if (product.quantity < 1) product.quantity = 1;
-        localStorage.setItem("selectedProducts", JSON.stringify(products));
-        renderizarCarrito();
+      if (typeof product.quantity === 'undefined' || product.quantity === 0) {
+        product.quantity = 1;
+      }
+      product.quantity += cambio; 
+      if (product.quantity < 1) {
+        product.quantity = 1;
+      }
+      localStorage.setItem("selectedProducts", JSON.stringify(products));
+      renderizarCarrito();
     }
-}
+  }
 
 // Función para eliminar un producto del carrito
 function eliminarProducto(nombreProducto) {
@@ -200,7 +205,7 @@ function finalizarCompra() {
         return;
     }
     for (const product of products) {
-        if (!product.quantity || product.quantity <= 0) {
+        if (product.quantity <= 0) {
             alert(`La cantidad del producto "${product.name}" no es válida.`);
             return;
         }
