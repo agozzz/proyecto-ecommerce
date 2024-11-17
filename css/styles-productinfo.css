@@ -326,26 +326,27 @@ button {
 
 /* Estilos para el modo noche */
 body.night-mode {
-  background-color: #2e2e2e;
-  color: #d6d6d6;
+  background-color: #121212; 
+  color: #ffcc00; 
 }
+  
+body.night-mode #infoUsuario {
+  color: white !important;
+}  
+
+body.night-mode .navbar { 
+  background-color: #333; 
+  border-bottom: 2px #2e2e2e; 
+  height: 115px;
+  }
+
 
 body.night-mode #toggleButton {
   background-color: #555;
 }
 
-body.night-mode .navbar { 
-  background-color: #333; 
-  border-bottom:#2e2e2e; 
-} 
 
-button.night-mode {
-  background-color: #333;
-  color: #c2c2c2;
-}
-body.night-mode #ratings-section {
-  background-color: #2e2e2e;
-}
+
 
 body.night-mode #comments {
   background-color: #3b3b3b; 
@@ -409,10 +410,6 @@ body.night-mode .imagenes-chicas img {
   filter: brightness(0.8);  
 }
 
-body.night-mode .container {
-  background-color: #2e2e2e;  
-}
-
 body.night-mode .productos-relacionados-container {
   background-color: #3b3b3b;
  }
@@ -444,5 +441,9 @@ body.night-mode .rating-buttton button {
   color: #ffcc00;  
   border: #ffcc00;  
  }
+
+ body.night-mode a {
+  color: #ffcc00;
+}
 
 
