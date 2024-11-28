@@ -14,18 +14,42 @@ app.use(express.static(__dirname));
 
 //JSON/CART/BUY
 const buy = require('./json/cart/buy.json');
-
+//Ruta para cargar el archivo buy.json
 app.get('/api/buy', (req, res) => {
-    res.status(200).json(buy);
+  try {
+      // Verificar si el archivo buy.json está correctamente cargado
+      if (!buy) {
+          return res.status(404).json({ error: 'No se pudo completar la compra.' });
+      }
+
+      // Si todo está bien, responde con el archivo
+      res.status(200).json(buy);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar la compra:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
 
 
 
 //JSON/CATS/CAT
 const cat = require('./json/cats/cat.json');
-
+//Ruta para cargar el archivo de categorías
 app.get('/api/cat', (req, res) => {
-    res.status(200).json(cat);
+  try {
+      // Verificar si el archivo cat.json está correctamente cargado
+      if (!cat) {
+          return res.status(404).json({ error: 'El archivo de categorías no se encuentra.' });
+      }
+
+      // Si todo está bien, responde con el archivo
+      res.status(200).json(cat);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar el archivo:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
 
 
@@ -70,8 +94,19 @@ fs.readdir(catsProductsFolder, (err, files) => {
 
 // Ruta para obtener todos los productos de cats_products
 app.get('/api/cats_products', (req, res) => {
-  // Responder con todos los productos de la categoría
-  res.status(200).json(allCatsProducts);
+  try {
+      // Verificar si el archivo está correctamente cargado
+      if (!allCatsProducts) {
+          return res.status(404).json({ error: 'No se encontraron las categorías de productos.' });
+      }
+
+      // Si todo está bien, responde con el archivo
+      res.status(200).json(allCatsProducts);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar el archivo:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
 
 
@@ -117,8 +152,19 @@ fs.readdir(productsFolder, (err, files) => {
 
 // Ruta para obtener todos los productos
 app.get('/api/products', (req, res) => {
-  // Responder con todos los productos cargados
-  res.status(200).json(allProducts);
+  try {
+      // Verificar si el archivo allProducts.json está correctamente cargado
+      if (!allProducts || allProducts.length === 0) {
+          return res.status(404).json({ error: 'No se encontraron productos.' });
+      }
+
+      // Si todo está bien, responde con los productos
+      res.status(200).json(allProducts);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar los productos:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
 
 
@@ -163,8 +209,19 @@ fs.readdir(productsCommentsFolder, (err, files) => {
 
 // Ruta para obtener todos los comentarios de productos
 app.get('/api/products_comments', (req, res) => {
-  // Responder con todos los comentarios de productos cargados
-  res.status(200).json(allProductsComments);
+  try {
+      // Verificar si el archivo allProductsComments.json está correctamente cargado
+      if (!allProductsComments || allProductsComments.length === 0) {
+          return res.status(404).json({ error: 'No se encontraron comentarios de productos.' });
+      }
+
+      // Si todo está bien, responde con los comentarios
+      res.status(200).json(allProductsComments);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar los comentarios de productos:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
 
 
@@ -173,14 +230,40 @@ app.get('/api/products_comments', (req, res) => {
 const publish = require('./json/sell/publish.json');
 
 app.get('/api/publish', (req, res) => {
-    res.status(200).json(publish);
+  try {
+      // Verificar si el archivo publish.json está correctamente cargado
+      if (!publish) {
+          return res.status(404).json({ error: 'No se pudo ejecturar la publicación.' });
+      }
+
+      // Si todo está bien, responde con el mensaje
+      res.status(200).json(publish);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar la publicación:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
+
+
 
 //JSON/USER_CART
 const user_cart = require('./json/user_cart/25801.json');
 
 app.get('/api/user_cart', (req, res) => {
-    res.status(200).json(user_cart);
+  try {
+      // Verificar si el archivo user_cart.json está correctamente cargado
+      if (!user_cart) {
+          return res.status(404).json({ error: 'No se encontró el archivo del carrito de usuario.' });
+      }
+
+      // Si todo está bien, responde con el archivo
+      res.status(200).json(user_cart);
+  } catch (error) {
+      // Si ocurre un error, devuelve una respuesta con el error
+      console.error('Error al cargar el archivo del carrito de usuario:', error);
+      res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
 });
 
 
