@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Funcionalidad para cerrar sesión
     document.getElementById("logout").addEventListener("click", function () {
         localStorage.removeItem("username");
+        localStorage.removeItem("token");
         window.location.href = "login.html";
     });
 });
