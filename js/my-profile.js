@@ -1,14 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Verificar si el usuario está logueado
-    const username = localStorage.getItem('username');
-    const password = localStorage.getItem('password');
-
-    // Si no está logueado, redirigir al login
-    if (!username || !password) {
-        alert('Debes iniciar sesión para acceder a tu perfil.');
-        window.location.href = 'login.html';  // Cambia la ruta si es necesario
-        return;
-    }
 
     // Mostrar el nombre del usuario en la barra de navegación
     const userInfo = document.getElementById('infoUsuario');

@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const app = express();
 const cors = require('cors');
+const jwt = require('jsonwebtoken'); // Para generar el token
 
 // Middleware para habilitar CORS
 app.use(cors());
@@ -266,10 +267,52 @@ app.get('/api/user_cart', (req, res) => {
   }
 });
 
+const users = [
+  {
+    username: 'admin',
+    password: '123456',
+  },
+  {
+    username: 'user',
+    password: '123456',
+  },
+];
+
+app.use(express.json()); // Para poder parsear los JSON en el cuerpo de la solicitud
+
+app.post('/login', (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    // Verifica si el nombre de usuario o la contraseña están vacíos
+    if (!username || !password) {
+      return res.status(400).json({ error: 'Falta el nombre de usuario o la contraseña.' });
+    }
+
+    // Busca el usuario con las credenciales correctas
+    const user = users.find(
+      (user) => user.username === username && user.password === password
+    );
+
+    // Si no encuentra el usuario o la contraseña no es correcta
+    if (!user) {
+      return res.status(401).json({ error: 'Nombre de usuario o contraseña incorrectos.' });
+    }
+
+    // Si el usuario es válido, generar un token
+    const token = jwt.sign({ username: user.username }, 'secreto', { expiresIn: '1h' });
+
+    // Retorna el token
+    res.status(200).json({ token, username: user.username });
+  } catch (error) {
+    console.error('Error al procesar la solicitud:', error);
+    res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
+  }
+});
+
 
 // Servidor corriendo
-const PORT = 3002;
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
-

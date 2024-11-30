@@ -6,15 +6,29 @@ document.addEventListener("DOMContentLoaded", function() {
     
     
     function login() {
-        if (!username.value || !password.value) {
-            alert("Debes ingresar un usuario y una contraseña para continuar");
-        } else {
-            console.log("username", username.value);
-            console.log("password", password.value);
-            localStorage.setItem("username", username.value);
-            localStorage.setItem("password", password.value);
-            window.location.href = "index.html"
-        }
+        fetch("http://localhost:3000/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                username: username.value,
+                password: password.value
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.error) {
+                alert(data.error);
+            } else {
+                localStorage.setItem("token", data.token);
+                localStorage.setItem("username", data.username);
+                window.location = "index.html";
+            }
+        })
+        .catch(error => {
+            console.error("Error al enviar la solicitud:", error);
+        });
     };
     
     button.addEventListener("click", login);

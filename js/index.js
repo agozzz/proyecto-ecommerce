@@ -1,9 +1,7 @@
 /*DESAFÍATE - ENTREGA 1*/
 window.onload = function() { /*Al cargar la ventana se ejecuta la siguiente función*/
-    let usuario = localStorage.getItem("username"); /*Tomamos del localStorage los datos de usuario y contraseña*/
-    let contraseña = localStorage.getItem("password");
-
-    if (!usuario || !contraseña) { /*Acá se ejecuta una condición, si no hay valor ingresado como usuario o contraseña, la página nos redireccionará al login*/
+    let token = localStorage.getItem("token");
+    if (!token) { /*Acá se ejecuta una condición, si no hay valor ingresado como usuario o contraseña, la página nos redireccionará al login*/
         window.location.href = "login.html";
     }
 };
