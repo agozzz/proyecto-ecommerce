@@ -314,7 +314,7 @@ app.post('/login', (req, res) => {
 
 
 // Servidor corriendo
-const PORT = 3000;
+const PORT = 3002;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });
