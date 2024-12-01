@@ -5,6 +5,8 @@ const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken'); // Para generar el token
 
+const authMiddleware = require('./middlewares/authMiddleware');// Importar el middleware de autorización
+
 // Middleware para habilitar CORS
 app.use(cors());
 
@@ -16,7 +18,7 @@ app.use(express.static(__dirname));
 //JSON/CART/BUY
 const buy = require('./json/cart/buy.json');
 //Ruta para cargar el archivo buy.json
-app.get('/api/buy', (req, res) => {
+app.get('/api/buy', authMiddleware, (req, res) => {
   try {
       // Verificar si el archivo buy.json está correctamente cargado
       if (!buy) {
@@ -94,7 +96,7 @@ fs.readdir(catsProductsFolder, (err, files) => {
 });
 
 // Ruta para obtener todos los productos de cats_products
-app.get('/api/cats_products', (req, res) => {
+app.get('/api/cats_products', authMiddleware, (req, res) => {
   try {
       // Verificar si el archivo está correctamente cargado
       if (!allCatsProducts) {
@@ -152,7 +154,7 @@ fs.readdir(productsFolder, (err, files) => {
 });
 
 // Ruta para obtener todos los productos
-app.get('/api/products', (req, res) => {
+app.get('/api/products', authMiddleware, (req, res) => {
   try {
       // Verificar si el archivo allProducts.json está correctamente cargado
       if (!allProducts || allProducts.length === 0) {
@@ -209,7 +211,7 @@ fs.readdir(productsCommentsFolder, (err, files) => {
 });
 
 // Ruta para obtener todos los comentarios de productos
-app.get('/api/products_comments', (req, res) => {
+app.get('/api/products_comments', authMiddleware, (req, res) => {
   try {
       // Verificar si el archivo allProductsComments.json está correctamente cargado
       if (!allProductsComments || allProductsComments.length === 0) {
@@ -230,7 +232,7 @@ app.get('/api/products_comments', (req, res) => {
 //JSON/SELL
 const publish = require('./json/sell/publish.json');
 
-app.get('/api/publish', (req, res) => {
+app.get('/api/publish', authMiddleware, (req, res) => {
   try {
       // Verificar si el archivo publish.json está correctamente cargado
       if (!publish) {
@@ -251,7 +253,7 @@ app.get('/api/publish', (req, res) => {
 //JSON/USER_CART
 const user_cart = require('./json/user_cart/25801.json');
 
-app.get('/api/user_cart', (req, res) => {
+app.get('/api/user_cart', authMiddleware, (req, res) => {
   try {
       // Verificar si el archivo user_cart.json está correctamente cargado
       if (!user_cart) {
