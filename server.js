@@ -4,24 +4,6 @@ const path = require('path');
 const app = express();
 const cors = require('cors');
 const jwt = require('jsonwebtoken'); // Para generar el token
-const mysql = require('mysql2');
-
-// Conexión a la base de datos MariaDB
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root', // Cambia esto si tienes un usuario diferente
-  password: '', // Ingresa tu contraseña si la tienes configurada
-  database: 'ecommerce', // El nombre de tu base de datos
-});
-
-connection.connect(err => {
-  if (err) {
-    console.error('Error de conexión a la base de datos:', err.stack);
-  } else {
-    console.log('Conectado a la base de datos MariaDB');
-  }
-});
-
 
 const authMiddleware = require('./middlewares/authMiddleware');// Importar el middleware de autorización
 
@@ -328,32 +310,6 @@ app.post('/login', (req, res) => {
     console.error('Error al procesar la solicitud:', error);
     res.status(500).json({ error: 'Hubo un problema al procesar la solicitud.' });
   }
-});
-
-
-app.post('/cart', (req, res) => {
-  const { items } = req.body; // Se asume que los items vienen en un formato como [{ producto_id, cantidad, total }, ...]
-
-  if (!items || items.length === 0) {
-    return res.status(400).json({ error: 'El carrito está vacío.' });
-  }
-
-  // Guardar los items en la base de datos
-  items.forEach(item => {
-    const { producto_id, cantidad, total } = item;
-
-    // Inserta los items en la tabla 'carrito'
-    const query = 'INSERT INTO carrito (producto_id, cantidad, total) VALUES (?, ?, ?)';
-    connection.query(query, [producto_id, cantidad, total], (err, result) => {
-      if (err) {
-        console.error('Error al insertar item en el carrito:', err);
-        return res.status(500).json({ error: 'Hubo un problema al guardar el carrito.' });
-      }
-    });
-  });
-
-  // Responder con éxito
-  res.status(200).json({ message: 'Carrito guardado correctamente' });
 });
 
 
