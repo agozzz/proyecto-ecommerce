@@ -204,12 +204,6 @@ function finalizarCompra() {
         alert("El carrito está vacío. Agrega productos para continuar.");
         return;
     }
-    for (const product of products) {
-        if (product.quantity <= 0) {
-            alert(`La cantidad del producto "${product.name}" no es válida.`);
-            return;
-        }
-    }
 
     // Validar forma de pago
     const paymentMethod = document.getElementById("payment-method").value;
@@ -218,8 +212,22 @@ function finalizarCompra() {
         return;
     }
 
-    // Mostrar mensaje de éxito si todas las validaciones son correctas
-    alert("¡Compra realizada con éxito! Gracias por tu compra.");
-    localStorage.removeItem("selectedProducts"); // Limpia el carrito
-    renderizarCarrito(); // Actualiza la interfaz
+    // Enviar los datos del carrito al servidor
+    fetch('http://localhost:3002/cart', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ items: products }) // Enviar el carrito como JSON
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Compra realizada con éxito!');
+        localStorage.removeItem("selectedProducts"); // Limpiar el carrito
+        renderizarCarrito(); // Actualizar la interfaz
+    })
+    .catch(error => {
+        console.error('Error al realizar la compra:', error);
+        alert('Hubo un problema al realizar la compra.');
+    });
 }
